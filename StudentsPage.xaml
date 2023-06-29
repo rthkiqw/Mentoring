@@ -1,0 +1,103 @@
+﻿<Page x:Class="Mentoring.StudentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mentoring"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StudentsPage"  MinHeight="600" MinWidth="360" MaxHeight="900" MaxWidth="480">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="35">
+                Студенты
+            </TextBlock>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="2">
+                    <Label>
+                        Форма обучения
+                    </Label>
+                    <ComboBox SelectionChanged="cbEducationType_SelectionChanged" Name="cbEducationType">
+                        
+                    </ComboBox>
+                    <Label>
+                        Возраст
+                    </Label>
+                    <ComboBox Name="cbStudentAge">
+
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Margin="2" Grid.Column="1">
+                    <Label>
+                        Наличие ОВЗ
+                    </Label>
+                    <ComboBox SelectionChanged="cbInvalid_SelectionChanged" Name="cbInvalid">
+
+                    </ComboBox>
+                    <Label>
+                        Группа здоровья
+                    </Label>
+                    <ComboBox SelectionChanged="cbHealthGroup_SelectionChanged" Name="cbHealthGroup">
+
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <ListView Name="lvStudents" Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run FontSize = "15" Text="{Binding LastName}"/>
+                        <Run FontSize = "15" Text="{Binding FirstName}"/>
+                        <Run FontSize = "15" Text="{Binding Patronymic}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Дата рождения: "/>
+                        <Run Text="{Binding Birthday}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Телефон: "/>
+                        <Run Text="{Binding Phone}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Email: "/>
+                        <Run Text="{Binding Email}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Адрес проживания: "/>
+                        <Run Text="{Binding Address}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Группа здоровья: "/>
+                        <Run Text="{Binding HealthGroup}"/>
+                        <LineBreak/>
+                        <Run FontWeight="Bold" Text="Дата рождения: "/>
+                        <Run Text="{Binding Birthday}"/>
+                        <LineBreak/>
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Grid Margin="3" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Button Margin="2" Click="Button_Click">
+                Добавить
+            </Button>
+            <Button IsEnabled="False" Margin="2" Grid.Column="1">
+                Редактировать
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

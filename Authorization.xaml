@@ -1,0 +1,60 @@
+﻿<Page x:Class="Mentoring.Authorization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Mentoring"
+      mc:Ignorable="d" 
+      Title="Authorization" MinHeight="600" MinWidth="360" MaxHeight="900" MaxWidth="480">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Margin="3" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label>
+                    Логин
+                </Label>
+                <TextBox KeyDown="tbLogin_KeyDown" VerticalContentAlignment="Center" FontSize="20" Background="LightYellow" TextAlignment="Left" Name="tbLogin" Grid.Row="1" >
+
+                </TextBox>
+            </Grid>
+            
+            <Grid Margin="3" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label>
+                    Пароль
+                </Label>
+                <PasswordBox KeyDown="tbPassword_KeyDown" VerticalContentAlignment="Center" FontSize="20" Background="LightYellow" Name="tbPassword" Grid.Row="1" >
+
+                </PasswordBox>
+            </Grid>
+            <Grid Margin="3" Grid.Row="2">
+                <Button VerticalAlignment="Center" FontSize="20" Background="LightYellow" Click="Button_Click">
+                    Войти
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
